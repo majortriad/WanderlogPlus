@@ -15,4 +15,4 @@ jobs:
     - name: Upload Release
       uses: actions/upload-artifact@v3.1.2
       with:
-        path: 'WanderlogPlus.xpi'
+        path: './WanderlogPlus/WanderlogPlus.xpi'
