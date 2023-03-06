@@ -1,10 +1,11 @@
 {
     "manifest_version": 2,
-    "name": "Wanderlog PLus",
+    "name": "Wanderlog Plus",
     "version": "0.1",
     "description": "Enhances features of Wanderlog.com",
     "icons": {
-        "48": "icons/border-48.png"
+        "48": "icons/wlplus-48.png",
+        "96": "icons/wlplus-96.png"
     },
     "content_scripts": [
         {

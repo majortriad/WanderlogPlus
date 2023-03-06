@@ -1,21 +1,17 @@
 const flights = document.getElementsByClassName("FlightsSectionItemView__smallCaps");
 
 for (let flight of flights) {
-    var splitFlight = flight.textContent.split(" ");
-    var flightNum = splitFlight.pop();
-    var airlineCodeNum = splitFlight.pop();
-    var airlineFull = splitFlight.join(" ");
+    let splitFlight = flight.textContent.split(" ");
+    let flightNum = splitFlight.pop();
+    let airlineCodeNum = splitFlight.pop();
+    let airlineFull = splitFlight.join(" ");
 
-    if (airlineCodeNum.length < 3) {
-        getIcaoCodeFromIataCode(airlineCodeNum).then(function (checkCode) {
-            var codeJsonString = "[" + checkCode.substring(checkCode.indexOf("\n") + 1).replace(/(\n|\\n)/g, ",") + "]"
-            var codeJson = JSON.parse(codeJsonString);
-            airlineCodeNum = codeJson[0].icao;
-            createFlightTrackButton(flight, airlineCodeNum, flightNum);
-        });
-    } else {
+    getIcaoCodeFromIataCode(airlineCodeNum).then(function (checkCode) {
+        let codeJsonString = "[" + checkCode.substring(checkCode.indexOf("\n") + 1).replace(/(\n|\\n)/g, ",") + "]"
+        let codeJson = JSON.parse(codeJsonString);
+        airlineCodeNum = codeJson[0].icao;
         createFlightTrackButton(flight, airlineCodeNum, flightNum);
-    }
+    });
 }
 
 function createFlightTrackButton(flightElement, airlineCode, flightNo) {
@@ -50,7 +46,7 @@ function getIcaoCodeFromIataCode(iataCode) {
         body: form
     };
 
-    return fetch('https://openflights.org/php/alsearch.php', options)
+    return fetch("https://openflights.org/php/alsearch.php", options)
         .then(function (response) { return response.text() });
 }
 
