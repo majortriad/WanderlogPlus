@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Wanderlog PLus",
+    "version": "0.1",
+    "description": "Enhances features of Wanderlog.com",
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.wanderlog.com/plan/*"
+            ],
+            "js": [
+                "wanderlogplus.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "https://openflights.org/php/alsearch.php"
+    ]
+}
