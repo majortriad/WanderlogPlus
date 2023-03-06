@@ -13,6 +13,6 @@ jobs:
         directory: './WanderlogPlus'
         exclusions: '*.git* /*node_modules/* .editorconfig'
     - name: Upload Release
-      uses: ncipollo/release-action@v1.12.0
+      uses: actions/upload-artifact@v3.1.2
       with:
-        artifacts: "WanderlogPlus.xpi"
+        path: 'WanderlogPlus.xpi'
