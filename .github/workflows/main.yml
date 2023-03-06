@@ -1,2 +1,0 @@
-- name: web-ext Action for Firefox Add-ons
-  uses: kewisch/action-web-ext@v1.0
