@@ -18,6 +18,7 @@
         }
     ],
     "permissions": [
-        "https://openflights.org/php/alsearch.php"
+        "https://openflights.org/php/alsearch.php",
+        "https://www.seatguru.com/*"
     ]
 }
